@@ -1,0 +1,84 @@
+ Create a new project by going to File ⇒ New Android Project. Fill all the details and name your activity as LoginActivity.
+ Once the project is created, create a new activity class in your project src directory and name it as RegisterActivity.java ( Right Click on src/package ⇒ New ⇒ Class)
+ 
+ ***********Now we need to create a layout for login screen.***********
+ 
+ Under res/layouts create a new xml file and name it as login.xml
+( Right Click on res/layout ⇒ New ⇒ Android XML File)
+ In login.xml type following code
+ + <?xml version="1.0" encoding="utf-8"?>
+   <ScrollView
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:fillViewport="true">
+   <RelativeLayout
+   android:layout_width="fill_parent"
+   android:layout_height="wrap_content" android:background="#ffffff">
+ 
+        <!--  Header Starts-->
+        <!--  Header Ends -->
+ 
+        <!-- Footer Start -->
+                   <!-- Place footer next to header to set z-index property to minus value -->
+        <!-- Footer Ends -->
+ 
+        <!-- Login Form -->
+        <!-- Login Form Ends -->
+ 
+   </RelativeLayout>
+   </ScrollView>
+   
+************. Create a new xml file under res/layout and name it as header_gradient.xml and type the following code***********
+
+header_gradient.xml
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#24b2eb"
+        android:centerColor="#4ccbff"
+        android:endColor="#24b2eb"
+        android:angle="270"/>
+    <corners android:radius="5dp" />
+</shape>
+
+In login.xml add the following code between the header comments.
+
+login.xml
+<!--  Header Starts-->
+<LinearLayout android:id="@+id/header"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@layout/header_gradient"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip">
+        <!-- Logo Start-->
+        <ImageView android:src="@drawable(paste the file name)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"/>
+        <!-- Logo Ends -->
+</LinearLayout>
+<!--  Header Ends -->
+
+************Create a new xml file under res/layout and name it as footer_repeat.xml and type the following code.***********
+
+footer_repeat.xml
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/repeat_bg"
+    android:tileMode="repeat" />
+
+**************In login.xml type the following code between footer comments**********
+
+login.xml
+<!-- Footer Start -->
+<LinearLayout android:id="@+id/footer"
+    android:layout_width="fill_parent"
+    android:layout_height="90dip"
+    android:background="@layout/footer_repeat"
+    android:layout_alignParentBottom="true">
+</LinearLayout>
+<!-- Footer Ends -->
+  
+  
